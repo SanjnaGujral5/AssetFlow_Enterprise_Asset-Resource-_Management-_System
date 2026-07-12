@@ -10,6 +10,16 @@ export interface User {
   createdAt: string;
 }
 
+export interface Department {
+  id: string;
+  name: string;
+  status: "ACTIVE" | "INACTIVE";
+  headUserId?: string | null;
+  headUser?: User | null;
+  parentDepartmentId?: string | null;
+  createdAt: string;
+}
+
 export interface AuthResponse {
   token: string;
   user: User;

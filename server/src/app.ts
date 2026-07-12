@@ -6,6 +6,8 @@ import allocationRoutes from "./modules/allocations/allocations.routes";
 import transferRoutes from "./modules/transfers/transfers.routes";
 import bookingRoutes from "./modules/bookings/bookings.routes";
 import maintenanceRoutes from "./modules/maintenance/maintenance.routes";
+import organizationRoutes from "./modules/organization/organization.routes";
+import reportsRoutes from "./modules/reports/reports.routes";
 import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
@@ -28,6 +30,8 @@ app.use("/api/allocations", allocationRoutes);
 app.use("/api/transfers", transferRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/maintenance", maintenanceRoutes);
+app.use("/api/organization", organizationRoutes);
+app.use("/api/reports", reportsRoutes);
 
 app.use(errorHandler);
 
