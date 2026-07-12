@@ -2,6 +2,15 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Login } from "./pages/auth/Login";
 import { Signup } from "./pages/auth/Signup";
 import { Dashboard } from "./pages/dashboard/Dashboard";
+import { AssetDirectory } from "./pages/assets/AssetDirectory";
+import { AllocationsTransfers } from "./pages/allocations/AllocationsTransfers";
+import { ResourceBooking } from "./pages/bookings/ResourceBooking";
+import { MaintenanceKanban } from "./pages/maintenance/MaintenanceKanban";
+import { AuditManagement } from "./pages/audit/AuditManagement";
+import { ReportsDashboard } from "./pages/reports/ReportsDashboard";
+import { Notifications } from "./pages/notifications/Notifications";
+import { OrgSetup } from "./pages/org-setup/OrgSetup";
+import { AssetRegistration } from "./pages/assets/AssetRegistration";
 import { DashboardLayout } from "./components/layout/DashboardLayout";
 import { RoleGuardedRoute } from "./components/shared/RoleGuardedRoute";
 
@@ -15,9 +24,15 @@ export function App() {
         <Route element={<RoleGuardedRoute />}>
           <Route element={<DashboardLayout />}>
             <Route path="/" element={<Dashboard />} />
-            {/* Additional protected routes (Assets, Allocations, Bookings,
-                Maintenance, Audits, Reports, Notifications, Org Setup)
-                are added here module by module in later phases. */}
+            <Route path="/assets/register" element={<AssetRegistration />} />
+            <Route path="/assets" element={<AssetDirectory />} />
+            <Route path="/allocations" element={<AllocationsTransfers />} />
+            <Route path="/bookings" element={<ResourceBooking />} />
+            <Route path="/maintenance" element={<MaintenanceKanban />} />
+            <Route path="/audits" element={<AuditManagement />} />
+            <Route path="/reports" element={<ReportsDashboard />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/org-setup" element={<OrgSetup />} />
           </Route>
         </Route>
 
@@ -26,3 +41,4 @@ export function App() {
     </BrowserRouter>
   );
 }
+
