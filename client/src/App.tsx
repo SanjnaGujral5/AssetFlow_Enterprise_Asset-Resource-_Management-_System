@@ -19,7 +19,7 @@ export function App() {
           <Route path="/" element={<Dashboard />} />
         </Route>
         </Route>
-
+        <Route path="/health" element={<AllocationBoard />} />
         <Route element={<RoleGuardedRoute />}>
           <Route element={<DashboardLayout />}>
             <Route path="/assets" element={<AssetList />} />
