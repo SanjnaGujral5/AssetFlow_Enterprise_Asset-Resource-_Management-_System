@@ -144,6 +144,7 @@ model Asset {
   location             String?
   photoUrl             String?
   isBookable           Boolean      @default(false)
+  isMaintainable       Boolean      @default(false)
   status               AssetStatus  @default(AVAILABLE)
   currentHolderUserId  String?
   currentHolderDeptId  String?

@@ -5,6 +5,8 @@ import { Dashboard } from "./pages/dashboard/Dashboard";
 import { AssetList } from "./pages/assets/AssetList";
 import { AssetDetail } from "./pages/assets/AssetDetail";
 import { AllocationBoard } from "./pages/allocations/AllocationBoard";
+import { BookingBoard } from "./pages/bookings/BookingBoard";
+import { MaintenanceBoard } from "./pages/maintenance/MaintenanceBoard";
 import { DashboardLayout } from "./components/layout/DashboardLayout";
 import { RoleGuardedRoute } from "./components/shared/RoleGuardedRoute";
 
@@ -25,6 +27,8 @@ export function App() {
             <Route path="/assets" element={<AssetList />} />
             <Route path="/assets/:id" element={<AssetDetail />} />
             <Route path="/allocations" element={<AllocationBoard />} />
+            <Route path="/bookings" element={<BookingBoard />} />
+            <Route path="/maintenance" element={<MaintenanceBoard />} />
           </Route>
         </Route>
 

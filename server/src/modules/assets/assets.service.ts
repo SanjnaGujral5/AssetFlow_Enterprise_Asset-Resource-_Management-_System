@@ -66,6 +66,7 @@ export async function createAsset(input: any) {
       location: input.location,
       photoUrl: input.photoUrl || undefined,
       isBookable: input.isBookable ?? false,
+      isMaintainable: input.isMaintainable ?? false,
       status,
     },
     include: { category: true },

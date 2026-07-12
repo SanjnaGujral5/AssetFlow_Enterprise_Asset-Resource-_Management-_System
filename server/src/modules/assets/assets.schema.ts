@@ -10,6 +10,7 @@ export const createAssetSchema = z.object({
   location: z.string().optional(),
   photoUrl: z.string().url().optional().or(z.literal("")),
   isBookable: z.boolean().optional(),
+  isMaintainable: z.boolean().optional(),
   status: z.enum(["AVAILABLE", "ALLOCATED", "RESERVED", "UNDER_MAINTENANCE", "LOST", "RETIRED", "DISPOSED"]).optional(),
 });
 

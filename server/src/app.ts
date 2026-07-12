@@ -4,6 +4,8 @@ import authRoutes from "./modules/auth/auth.routes";
 import assetRoutes from "./modules/assets/assets.routes";
 import allocationRoutes from "./modules/allocations/allocations.routes";
 import transferRoutes from "./modules/transfers/transfers.routes";
+import bookingRoutes from "./modules/bookings/bookings.routes";
+import maintenanceRoutes from "./modules/maintenance/maintenance.routes";
 import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
@@ -24,6 +26,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/assets", assetRoutes);
 app.use("/api/allocations", allocationRoutes);
 app.use("/api/transfers", transferRoutes);
+app.use("/api/bookings", bookingRoutes);
+app.use("/api/maintenance", maintenanceRoutes);
 
 app.use(errorHandler);
 
