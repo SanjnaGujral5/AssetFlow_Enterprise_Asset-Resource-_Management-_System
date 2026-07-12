@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import authRoutes from "./modules/auth/auth.routes";
+import assetRoutes from "./modules/assets/assets.routes";
+import allocationRoutes from "./modules/allocations/allocations.routes";
+import transferRoutes from "./modules/transfers/transfers.routes";
 import { errorHandler } from "./middleware/errorHandler";
 
 const app = express();
@@ -18,11 +21,9 @@ app.get("/api/health", (_req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-
-// Future modules mount here in the same pattern:
-// app.use("/api/departments", departmentRoutes);
-// app.use("/api/assets", assetRoutes);
-// etc.
+app.use("/api/assets", assetRoutes);
+app.use("/api/allocations", allocationRoutes);
+app.use("/api/transfers", transferRoutes);
 
 app.use(errorHandler);
 
